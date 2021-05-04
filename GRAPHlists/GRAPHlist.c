@@ -1,6 +1,5 @@
 #include <stdlib.h>
-#include <stdio.h>
-#include "ListGraph.h"
+#include "GRAPHlist.h"
 
 struct node { 
    vertex w; 
