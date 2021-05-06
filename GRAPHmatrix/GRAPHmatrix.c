@@ -61,3 +61,22 @@ void GRAPHshow( Graph G) {
   }
   printf("----------------------------\n");
 }
+
+int outDegree(Graph G, vertex v) {
+  int fanOut = 0, w;
+
+  for (w = 0; w < G->V; ++w) {
+    if (G->adj[v][w] == 1)
+      ++fanOut;
+  }
+
+  return fanOut;
+}
+
+int isSink(Graph G, vertex v){
+  if (outDegree(G, v) == 0){
+    return 1;
+  }
+  else 
+    return 0;
+}
