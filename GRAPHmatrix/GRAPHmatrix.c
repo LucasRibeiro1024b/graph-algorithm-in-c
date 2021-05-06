@@ -80,3 +80,22 @@ int isSink(Graph G, vertex v){
   else 
     return 0;
 }
+
+int inDegree(Graph G, vertex v) {
+  int fanIn = 0, x;
+
+  for (x = 0; x < G->V; ++x) {
+    if (G->adj[x][v] == 1)
+      ++fanIn;
+  }
+
+  return fanIn;
+}
+
+int isSource(Graph G, vertex v){
+  if (inDegree(G, v) == 0){
+    return 1;
+  }
+  else 
+    return 0;
+}

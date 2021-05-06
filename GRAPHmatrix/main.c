@@ -2,6 +2,7 @@
 #include "GRAPHmatrix.h"
 
 void showSinkInfo(Graph, vertex);
+void showSourceInfo(Graph, vertex);
 
 int main (){
   Graph G = GRAPHinit(10);
@@ -16,9 +17,13 @@ int main (){
   GRAPHinsertArc(G, 6, 2);
   GRAPHshow(G);
 
-  showSinkInfo(G, 2);
+  showSinkInfo(G, 1);
   showSinkInfo(G, 5);
   showSinkInfo(G, 6);
+
+  showSourceInfo(G, 1);
+  showSourceInfo(G, 5);
+  showSourceInfo(G, 6);
   
   return 0;
 }
@@ -28,4 +33,11 @@ void showSinkInfo(Graph G, vertex v) {
     printf("Vertex %d is sink.\n", v);
   else 
     printf("Vertex %d is not a sink.\n", v);
+}
+
+void showSourceInfo(Graph G, vertex v) {
+  if (isSource(G, v))
+    printf("Vertex %d is source.\n", v);
+  else 
+    printf("Vertex %d is not a source.\n", v);
 }
