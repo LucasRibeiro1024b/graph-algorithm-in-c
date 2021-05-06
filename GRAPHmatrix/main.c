@@ -29,14 +29,14 @@ int main (){
 }
 
 void showSinkInfo(Graph G, vertex v) {
-  if (isSink(G, v))
+  if (GRAPHisSink(G, v))
     printf("Vertex %d is sink.\n", v);
   else 
     printf("Vertex %d is not a sink.\n", v);
 }
 
 void showSourceInfo(Graph G, vertex v) {
-  if (isSource(G, v))
+  if (GRAPHisSource(G, v))
     printf("Vertex %d is source.\n", v);
   else 
     printf("Vertex %d is not a source.\n", v);

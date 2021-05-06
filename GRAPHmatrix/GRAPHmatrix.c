@@ -62,7 +62,7 @@ void GRAPHshow( Graph G) {
   printf("----------------------------\n");
 }
 
-int outDegree(Graph G, vertex v) {
+int GRAPHoutdeg(Graph G, vertex v) {
   int fanOut = 0, w;
 
   for (w = 0; w < G->V; ++w) {
@@ -73,15 +73,15 @@ int outDegree(Graph G, vertex v) {
   return fanOut;
 }
 
-int isSink(Graph G, vertex v){
-  if (outDegree(G, v) == 0){
+int GRAPHisSink(Graph G, vertex v){
+  if (GRAPHoutdeg(G, v) == 0){
     return 1;
   }
   else 
     return 0;
 }
 
-int inDegree(Graph G, vertex v) {
+int GRAPHindeg(Graph G, vertex v) {
   int fanIn = 0, x;
 
   for (x = 0; x < G->V; ++x) {
@@ -92,8 +92,8 @@ int inDegree(Graph G, vertex v) {
   return fanIn;
 }
 
-int isSource(Graph G, vertex v){
-  if (inDegree(G, v) == 0){
+int GRAPHisSource(Graph G, vertex v){
+  if (GRAPHindeg(G, v) == 0){
     return 1;
   }
   else 
